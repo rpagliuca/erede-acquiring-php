@@ -29,7 +29,7 @@ class AuthorizeRequestMapper {
       if(isset($data[$key]))
         $authorizeRequest->$value = $data[$key];
 
-    $authorizeRequest->Total    = ((float)$data['amount']) / 100;
+    $authorizeRequest->Total    = number_format(((float)$data['amount']) / 100, 2, ".", "");
     $authorizeRequest->Filiacao = $this->filiation;
     $authorizeRequest->Senha    = $this->password;
 
